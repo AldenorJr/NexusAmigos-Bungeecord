@@ -39,6 +39,8 @@ public class Main extends Plugin {
 
     @Override
     public void onDisable() {
+        BungeeCord.getInstance().getConsole().sendMessage(textComponentUtil.createTextComponent(prefix + "§cPlugin desligando..."));
         hikaridConnect.closeHikariDataSource();
+        BungeeCord.getInstance().getConsole().sendMessage(textComponentUtil.createTextComponent(prefix + "§cDatabase descarregada."));
     }
 }
