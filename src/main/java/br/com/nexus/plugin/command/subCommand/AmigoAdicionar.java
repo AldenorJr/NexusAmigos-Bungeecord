@@ -30,6 +30,10 @@ public class AmigoAdicionar implements SubCommand {
             proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("§cO jogador está offline, apenas é permitido enviar solicitação de amizade para jogadores online."));
             return;
         }
+        if(new VeantyCoreAPI().isIgnoreServer(proxiedPlayer.getServer().getInfo().getName())) {
+            proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("§cEsse jogador está se autenticando."));
+            return;
+        }
         if(AmigosCache.hashMapList.get(playerRequest).getFriendList().contains(proxiedPlayer.getName())) {
             proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("§cVocês já são amigos."));
             return;
