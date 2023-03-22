@@ -1,5 +1,6 @@
 package br.com.nexus.plugin.listener;
 
+import br.com.nexus.plugin.API.NexusAmigosAPI;
 import br.com.nexus.plugin.api.VeantyCoreAPI;
 import br.com.nexus.plugin.cache.AmigosCache;
 import br.com.nexus.plugin.model.PlayerObject;
@@ -41,7 +42,7 @@ public class EventPlayer implements Listener {
             try {
                 ProxiedPlayer proxiedPlayer = BungeeCord.getInstance().getPlayer(amigosNick);
                 if(proxiedPlayer != null) {
-                    proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(
+                    if(AmigosCache.hashMapList.get(proxiedPlayer).getNotification()) proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(
                             "§e[§a§l+§e] Seu amigo "+ new VeantyCoreAPI().getTagUtil(proxiedPlayer).getTag()+ " " +playerObject.getProxiedPlayer().getName()+"§e, entrou no servidor."));
                 }
             } catch (Exception ignored) {}
@@ -53,7 +54,7 @@ public class EventPlayer implements Listener {
             try {
                 ProxiedPlayer proxiedPlayer = BungeeCord.getInstance().getPlayer(amigosNick);
                 if(proxiedPlayer != null) {
-                    proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(
+                    if(AmigosCache.hashMapList.get(proxiedPlayer).getNotification()) proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(
                             "§e[§4§l-§e] Seu amigo "+ new VeantyCoreAPI().getTagUtil(proxiedPlayer).getTag()+ " " +playerObject.getProxiedPlayer().getName()+"§e, saiu no servidor."));
                 }
             } catch (Exception ignored) {}
