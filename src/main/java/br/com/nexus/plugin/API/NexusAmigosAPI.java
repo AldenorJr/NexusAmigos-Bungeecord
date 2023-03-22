@@ -5,8 +5,8 @@ import net.md_5.bungee.api.connection.ProxiedPlayer;
 
 public class NexusAmigosAPI {
 
-    public Boolean hasFriends(ProxiedPlayer proxiedPlayer, ProxiedPlayer proxiedPlayer2) {
-        return AmigosCache.hashMapList.get(proxiedPlayer).getFriendList().contains(proxiedPlayer2.getName());
+    public Boolean isFriend(ProxiedPlayer player, ProxiedPlayer request) {
+        return AmigosCache.hashMapList.get(player).getFriendList().contains(request.getName());
     }
 
 }
