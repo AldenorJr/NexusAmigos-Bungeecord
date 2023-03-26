@@ -55,7 +55,7 @@ public class EventPlayer implements Listener {
                 ProxiedPlayer proxiedPlayer = BungeeCord.getInstance().getPlayer(amigosNick);
                 if(proxiedPlayer != null) {
                     if(AmigosCache.hashMapList.get(proxiedPlayer).getNotification()) proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(
-                            "§e[§4§l-§e] Seu amigo "+ new VeantyCoreAPI().getTagUtil(playerObject.getProxiedPlayer()).getTag()+ " " +playerObject.getProxiedPlayer().getName()+"§e, saiu no servidor."));
+                            "§e[§4§l-§e] Seu amigo "+ new VeantyCoreAPI().getTagUtil(playerObject.getProxiedPlayer()).getTag()+ " " +playerObject.getProxiedPlayer().getName()+"§e, saiu do servidor."));
                 }
             } catch (Exception ignored) {}
         }
