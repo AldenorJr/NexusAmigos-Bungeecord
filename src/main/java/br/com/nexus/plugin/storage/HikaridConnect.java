@@ -16,8 +16,6 @@ public class HikaridConnect {
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
         config.setUsername(username);
         config.setPassword(password);
-        config.setMinimumIdle(5);
-        config.setMaximumPoolSize(10000000);
         this.hikariDataSource = new HikariDataSource(config);
     }
 
