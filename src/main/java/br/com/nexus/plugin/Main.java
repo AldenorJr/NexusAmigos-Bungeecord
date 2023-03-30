@@ -11,14 +11,16 @@ import lombok.SneakyThrows;
 import net.md_5.bungee.BungeeCord;
 import net.md_5.bungee.api.plugin.Plugin;
 
+import java.sql.SQLException;
+
 public class Main extends Plugin {
 
     private String prefix = "§e[NexusAmigos] ";
     private final HikaridConnect hikaridConnect = new HikaridConnect();
     private final TextComponentUtil textComponentUtil = new TextComponentUtil();
     private final ListUtil listUtil = new ListUtil();
-    private final DatabaseMethod databaseMethod = new DatabaseMethod(hikaridConnect, listUtil);
     private final ConfigurationFile configurationFile = new ConfigurationFile(this);
+    private final DatabaseMethod databaseMethod = new DatabaseMethod(hikaridConnect, listUtil);
 
     @Override @SneakyThrows
     public void onEnable() {

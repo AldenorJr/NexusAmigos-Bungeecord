@@ -8,6 +8,7 @@ import br.com.nexus.plugin.storage.HikaridConnect;
 import br.com.nexus.plugin.storage.database.DatabaseMethod;
 import br.com.nexus.plugin.util.TextComponentUtil;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import net.md_5.bungee.BungeeCord;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.PlayerDisconnectEvent;
@@ -22,7 +23,7 @@ public class EventPlayer implements Listener {
     private final DatabaseMethod databaseMethod;
     private final TextComponentUtil textComponentUtil;
 
-    @EventHandler
+    @EventHandler @SneakyThrows
     public void toJoin(PostLoginEvent e) {
         ProxiedPlayer proxiedPlayer = e.getPlayer();
         if(!databaseMethod.hasProxiedPlayer(proxiedPlayer)) databaseMethod.setProxiedPlayer(proxiedPlayer);

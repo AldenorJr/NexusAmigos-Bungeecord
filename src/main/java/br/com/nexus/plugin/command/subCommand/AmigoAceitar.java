@@ -5,6 +5,7 @@ import br.com.nexus.plugin.cache.AmigosCache;
 import br.com.nexus.plugin.model.PlayerObject;
 import br.com.nexus.plugin.storage.database.DatabaseMethod;
 import br.com.nexus.plugin.util.TextComponentUtil;
+import lombok.SneakyThrows;
 import net.md_5.bungee.BungeeCord;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
@@ -16,7 +17,7 @@ public class AmigoAceitar implements SubCommand {
         return "aceitar";
     }
 
-    @Override
+    @Override @SneakyThrows
     public void execute(ProxiedPlayer proxiedPlayer, String[] args, TextComponentUtil textComponentUtil, DatabaseMethod databaseMethod) {
         if(args.length != 2) {
             proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("§cUse o comando da seguinte forma: /amigos aceitar <username>."));

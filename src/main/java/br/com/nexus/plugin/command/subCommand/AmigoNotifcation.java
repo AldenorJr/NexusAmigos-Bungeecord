@@ -4,6 +4,7 @@ import br.com.nexus.plugin.cache.AmigosCache;
 import br.com.nexus.plugin.model.PlayerObject;
 import br.com.nexus.plugin.storage.database.DatabaseMethod;
 import br.com.nexus.plugin.util.TextComponentUtil;
+import lombok.SneakyThrows;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 
 public class AmigoNotifcation implements SubCommand{
@@ -14,7 +15,7 @@ public class AmigoNotifcation implements SubCommand{
         return "notificacao";
     }
 
-    @Override
+    @Override @SneakyThrows
     public void execute(ProxiedPlayer proxiedPlayer, String[] args, TextComponentUtil textComponentUtil, DatabaseMethod databaseMethod) {
         PlayerObject playerObject = AmigosCache.hashMapList.get(proxiedPlayer);
         if(playerObject.getNotification()) {
