@@ -28,7 +28,7 @@ public class ConfigurationFile {
 
     private void setDefaultMsSQLDB(Configuration configuration) {
         configuration.set("MySQL.user", "root");
-        configuration.set("MySQL.host", "127.0.0.1");
+        configuration.set("MySQL.host", "127.0.0.1:3306");
         configuration.set("MySQL.database", "test");
         configuration.set("MySQL.password", "");
     }

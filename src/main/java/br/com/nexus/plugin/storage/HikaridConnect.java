@@ -10,7 +10,7 @@ public class HikaridConnect {
     public void MySQLConnectLoad(String ipAddress, String database, String username, String password) {
         HikariConfig config = new HikariConfig();
         config.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        config.setJdbcUrl("jdbc:mysql://" + ipAddress + ":3307/" + database);
+        config.setJdbcUrl("jdbc:mysql://" + ipAddress + "/" + database);
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
