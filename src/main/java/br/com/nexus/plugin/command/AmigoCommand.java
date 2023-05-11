@@ -1,6 +1,6 @@
 package br.com.nexus.plugin.command;
 
-import br.com.nexus.plugin.api.VeantyCoreAPI;
+import br.com.nexus.plugin.api.NexusCoreAPI;
 import br.com.nexus.plugin.command.subCommand.*;
 import br.com.nexus.plugin.storage.database.DatabaseMethod;
 import br.com.nexus.plugin.util.TextComponentUtil;
@@ -29,7 +29,7 @@ public class AmigoCommand extends Command {
             return;
         }
         ProxiedPlayer proxiedPlayer = (ProxiedPlayer) commandSender;
-        if(new VeantyCoreAPI().isIgnoreServer(proxiedPlayer.getServer().getInfo().getName())) {
+        if(new NexusCoreAPI().isIgnoreServer(proxiedPlayer.getServer().getInfo().getName())) {
             proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("§cVocê precisa para se autenticar para executar esse comando."));
             return;
         }

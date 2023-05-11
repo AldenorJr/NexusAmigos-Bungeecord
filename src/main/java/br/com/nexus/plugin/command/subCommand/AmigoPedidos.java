@@ -1,6 +1,6 @@
 package br.com.nexus.plugin.command.subCommand;
 
-import br.com.nexus.plugin.api.VeantyCoreAPI;
+import br.com.nexus.plugin.api.NexusCoreAPI;
 import br.com.nexus.plugin.cache.AmigosCache;
 import br.com.nexus.plugin.storage.database.DatabaseMethod;
 import br.com.nexus.plugin.util.TextComponentUtil;
@@ -29,7 +29,7 @@ public class AmigoPedidos implements SubCommand {
             StringBuilder prefix = new StringBuilder();
             prefix.append("  §f§l➥");
 
-            if(proxiedPlayerRequest != null) prefix.append(" ").append(new VeantyCoreAPI().getTagUtil(proxiedPlayerRequest).getTag().replaceAll("&", "§")).append(" ").append(proxiedPlayerRequest.getName());
+            if(proxiedPlayerRequest != null) prefix.append(" ").append(new NexusCoreAPI().getTagUtil(proxiedPlayerRequest).getTag().replaceAll("&", "§")).append(" ").append(proxiedPlayerRequest.getName());
             else prefix.append(" §7").append(playerRequest);
 
             TextComponent aceitar = new TextComponent(TextComponent.fromLegacyText("§2§l[ACEITAR]"));

@@ -1,6 +1,6 @@
 package br.com.nexus.plugin.command.subCommand;
 
-import br.com.nexus.plugin.api.VeantyCoreAPI;
+import br.com.nexus.plugin.api.NexusCoreAPI;
 import br.com.nexus.plugin.cache.AmigosCache;
 import br.com.nexus.plugin.storage.database.DatabaseMethod;
 import br.com.nexus.plugin.util.TextComponentUtil;
@@ -25,9 +25,9 @@ public class AmigoLista implements SubCommand{
         proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(""));
         for(String nick : AmigosCache.hashMapList.get(proxiedPlayer).getFriendList()) {
             ProxiedPlayer proxiedPlayerNick = BungeeCord.getInstance().getPlayer(nick);
-            if(proxiedPlayerNick != null) proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("  §e§l➥ " + new VeantyCoreAPI().getTagUtil(proxiedPlayerNick).getTag() + " " +
+            if(proxiedPlayerNick != null) proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("  §e§l➥ " + new NexusCoreAPI().getTagUtil(proxiedPlayerNick).getTag() + " " +
                     proxiedPlayerNick.getName() + " " +
-                    "§8("+new VeantyCoreAPI().getPrefixServer(proxiedPlayerNick.getServer().getInfo().getName())+")§e."));
+                    "§8("+new NexusCoreAPI().getPrefixServer(proxiedPlayerNick.getServer().getInfo().getName())+")§e."));
             else proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("  §e§l➥ §c" + nick + " §c(Offline)"));
         }
         proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(""));

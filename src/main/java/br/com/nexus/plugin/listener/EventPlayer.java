@@ -1,7 +1,7 @@
 package br.com.nexus.plugin.listener;
 
 import br.com.nexus.plugin.API.NexusAmigosAPI;
-import br.com.nexus.plugin.api.VeantyCoreAPI;
+import br.com.nexus.plugin.api.NexusCoreAPI;
 import br.com.nexus.plugin.cache.AmigosCache;
 import br.com.nexus.plugin.model.PlayerObject;
 import br.com.nexus.plugin.storage.HikaridConnect;
@@ -44,7 +44,7 @@ public class EventPlayer implements Listener {
                 ProxiedPlayer proxiedPlayer = BungeeCord.getInstance().getPlayer(amigosNick);
                 if(proxiedPlayer != null) {
                     if(AmigosCache.hashMapList.get(proxiedPlayer).getNotification()) proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(
-                            "§e[§a§l+§e] Seu amigo "+ new VeantyCoreAPI().getTagUtil(playerObject.getProxiedPlayer()).getTag()+ " " +playerObject.getProxiedPlayer().getName()+"§e, entrou no servidor."));
+                            "§e[§a§l+§e] Seu amigo "+ new NexusCoreAPI().getTagUtil(playerObject.getProxiedPlayer()).getTag()+ " " +playerObject.getProxiedPlayer().getName()+"§e, entrou no servidor."));
                 }
             } catch (Exception ignored) {}
         }
@@ -56,7 +56,7 @@ public class EventPlayer implements Listener {
                 ProxiedPlayer proxiedPlayer = BungeeCord.getInstance().getPlayer(amigosNick);
                 if(proxiedPlayer != null) {
                     if(AmigosCache.hashMapList.get(proxiedPlayer).getNotification()) proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(
-                            "§e[§4§l-§e] Seu amigo "+ new VeantyCoreAPI().getTagUtil(playerObject.getProxiedPlayer()).getTag()+ " " +playerObject.getProxiedPlayer().getName()+"§e, saiu do servidor."));
+                            "§e[§4§l-§e] Seu amigo "+ new NexusCoreAPI().getTagUtil(playerObject.getProxiedPlayer()).getTag()+ " " +playerObject.getProxiedPlayer().getName()+"§e, saiu do servidor."));
                 }
             } catch (Exception ignored) {}
         }

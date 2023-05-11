@@ -1,6 +1,6 @@
 package br.com.nexus.plugin.command.subCommand;
 
-import br.com.nexus.plugin.api.VeantyCoreAPI;
+import br.com.nexus.plugin.api.NexusCoreAPI;
 import br.com.nexus.plugin.cache.AmigosCache;
 import br.com.nexus.plugin.model.PlayerObject;
 import br.com.nexus.plugin.storage.database.DatabaseMethod;
@@ -58,12 +58,12 @@ public class AmigoRemover implements SubCommand {
             databaseMethod.updatePlayerObject(playerObject);
 
             playerRequest.sendMessage(textComponentUtil.createTextComponent(""));
-            playerRequest.sendMessage(textComponentUtil.createTextComponent("§cVocê e o jogador " + new VeantyCoreAPI().getTagUtil(proxiedPlayer).getTag() + " " +
+            playerRequest.sendMessage(textComponentUtil.createTextComponent("§cVocê e o jogador " + new NexusCoreAPI().getTagUtil(proxiedPlayer).getTag() + " " +
                     proxiedPlayer.getName() + " §cnão são mais amigos."));
             playerRequest.sendMessage(textComponentUtil.createTextComponent(""));
 
             proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(""));
-            proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("§cVocê e o jogador " + new VeantyCoreAPI().getTagUtil(playerRequest).getTag() + " " +
+            proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("§cVocê e o jogador " + new NexusCoreAPI().getTagUtil(playerRequest).getTag() + " " +
                     playerRequest.getName() + " §cnão são mais amigos."));
             proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(""));
         }

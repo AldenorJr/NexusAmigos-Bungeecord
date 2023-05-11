@@ -1,6 +1,6 @@
 package br.com.nexus.plugin.command.subCommand;
 
-import br.com.nexus.plugin.api.VeantyCoreAPI;
+import br.com.nexus.plugin.api.NexusCoreAPI;
 import br.com.nexus.plugin.cache.AmigosCache;
 import br.com.nexus.plugin.storage.database.DatabaseMethod;
 import br.com.nexus.plugin.util.TextComponentUtil;
@@ -30,7 +30,7 @@ public class AmigoAdicionar implements SubCommand {
             proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("§cO jogador está offline, apenas é permitido enviar solicitação de amizade para jogadores online."));
             return;
         }
-        if(new VeantyCoreAPI().isIgnoreServer(proxiedPlayer.getServer().getInfo().getName())) {
+        if(new NexusCoreAPI().isIgnoreServer(proxiedPlayer.getServer().getInfo().getName())) {
             proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("§cEsse jogador está se autenticando."));
             return;
         }
@@ -48,7 +48,7 @@ public class AmigoAdicionar implements SubCommand {
         }
 
         proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(""));
-        proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("§aSua solicitação foi enviada. O jogador "+ new VeantyCoreAPI().getTagUtil(playerRequest).getTag() + " " +
+        proxiedPlayer.sendMessage(textComponentUtil.createTextComponent("§aSua solicitação foi enviada. O jogador "+ new NexusCoreAPI().getTagUtil(playerRequest).getTag() + " " +
                 "" + playerRequest.getName() + " §atem cerca de 5 minutos para aceitar sua solicitação."));
         proxiedPlayer.sendMessage(textComponentUtil.createTextComponent(""));
 
@@ -65,7 +65,7 @@ public class AmigoAdicionar implements SubCommand {
             negar.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/amigo recusar " + proxiedPlayer.getName()));
 
             TextComponent mensagem = new TextComponent(TextComponent.fromLegacyText("§aO jogador " +
-                    new VeantyCoreAPI().getTagUtil(proxiedPlayer).getTag().replaceAll("&", "§")+ " " + proxiedPlayer + " §aenviou para você uma solicitação de amizade, clique aqui para "));
+                    new NexusCoreAPI().getTagUtil(proxiedPlayer).getTag().replaceAll("&", "§")+ " " + proxiedPlayer + " §aenviou para você uma solicitação de amizade, clique aqui para "));
 
             mensagem.addExtra(aceitar);
             mensagem.addExtra(" §aou ");
